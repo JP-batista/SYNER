@@ -1,7 +1,7 @@
 // src/app/layout.tsx
 
 import './globals.css';
-import Navbar from './components/Navbar';
+import ClientLayout from './components/ClientLayout'; // Importa o layout cliente
 
 export const metadata = {
   title: 'Syner',
@@ -11,11 +11,8 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR">
-      <body className="flex">
-        <Navbar />
-        <main className="ml-24 w-full p-8 bg-gray-100 min-h-screen">
-          {children}
-        </main>
+      <body>
+        <ClientLayout>{children}</ClientLayout> {/* Usa o layout cliente */}
       </body>
     </html>
   );

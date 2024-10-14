@@ -1,6 +1,7 @@
 // src/app/login/page.tsx
 
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function LoginPage() {
   return (
@@ -20,9 +21,12 @@ export default function LoginPage() {
 
           {/* Botões de ação */}
           <div className="space-y-6 w-full max-w-xs">
-            <button className="bg-blue-600 text-white w-full py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
-              Criar conta
-            </button>
+            {/* Alterando o botão de criar conta para redirecionar para a página de signup */}
+            <Link href="/login/signup">
+              <button className="bg-blue-600 text-white w-full py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                Criar conta
+              </button>
+            </Link>
             <button className="bg-white border border-gray-300 w-full py-4 rounded-lg flex items-center justify-center space-x-2 font-semibold hover:bg-gray-50 transition-colors">
               <Image
                 src="/icons/google-logo.png" // Substitua pelo caminho do logo do Google
@@ -64,7 +68,7 @@ export default function LoginPage() {
           </p>
           <div className="text-center w-full max-w-xs">
             <button className="bg-blue-600 text-white w-full py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
-              Login
+            <Link href="/login/signin">Login</Link>
             </button>
           </div>
         </div>
