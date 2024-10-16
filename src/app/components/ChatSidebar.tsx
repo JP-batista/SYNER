@@ -1,11 +1,15 @@
-// Definir o tipo para os contatos
-type Contact = {
+// Definir o tipo Contact
+export type Contact = {
   id: number;
   name: string;
   role: string;
 };
 
-export default function ChatSidebar({ onSelectContact }: { onSelectContact: (contact: Contact) => void }) {
+export default function ChatSidebar({
+  onSelectContact,
+}: {
+  onSelectContact: (contact: Contact) => void;
+}) {
   const contacts: Contact[] = [
     { id: 1, name: 'Silas Oliveira', role: 'Monitor de Matemática' },
     { id: 2, name: 'Fernanda Martins', role: 'Monitor de Matemática' },
@@ -19,7 +23,11 @@ export default function ChatSidebar({ onSelectContact }: { onSelectContact: (con
       <h2 className="text-xl font-semibold mb-4">Contatos</h2>
       <ul className="space-y-4">
         {contacts.map((contact) => (
-          <li key={contact.id} className="cursor-pointer" onClick={() => onSelectContact(contact)}>
+          <li
+            key={contact.id}
+            className="cursor-pointer"
+            onClick={() => onSelectContact(contact)}
+          >
             <div className="flex items-center space-x-2">
               <div className="w-10 h-10 rounded-full bg-gray-300"></div> {/* Placeholder para a imagem */}
               <div>

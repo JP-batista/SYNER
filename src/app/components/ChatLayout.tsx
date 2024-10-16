@@ -1,11 +1,16 @@
 "use client"; // Marca o componente como um Client Component
 
 import { ReactNode } from 'react';
-import ChatSidebar from './ChatSidebar'; // Importa a barra lateral de contatos
-import { Contact } from './ChatSidebar'; // Certifique-se de importar o tipo Contact
+import ChatSidebar, { Contact } from './ChatSidebar'; // Certifique-se de importar o tipo Contact do arquivo correto
 
 // Adiciona a prop onSelectContact para ser passada ao ChatSidebar
-export default function ChatLayout({ children, onSelectContact }: { children: ReactNode; onSelectContact: (contact: Contact) => void }) {
+export default function ChatLayout({
+  children,
+  onSelectContact,
+}: {
+  children: ReactNode;
+  onSelectContact: (contact: Contact) => void;
+}) {
   return (
     <div className="flex min-h-screen bg-gray-100">
       {/* Barra lateral de contatos */}

@@ -3,7 +3,6 @@
 import { useState } from 'react'; // Importação do useState
 import ChatLayout from '../components/ChatLayout'; // Certifique-se de que o caminho está correto
 import ChatWindow from '../components/ChatWindow'; // Certifique-se de que o caminho está correto
-import ChatSidebar from '../components/ChatSidebar'; // Certifique-se de que o caminho está correto
 
 // Definir o tipo Contact
 type Contact = {
@@ -16,8 +15,7 @@ export default function ChatPage() {
   const [selectedContact, setSelectedContact] = useState<Contact | null>(null); // Estado para o contato selecionado
 
   return (
-    <ChatLayout>
-      <ChatSidebar onSelectContact={setSelectedContact} /> {/* Adiciona a barra lateral de contatos */}
+    <ChatLayout onSelectContact={setSelectedContact}> {/* Passa a função setSelectedContact para o ChatLayout */}
       {selectedContact ? (
         <ChatWindow contact={selectedContact} /> // Exibe a janela de chat ao selecionar um contato
       ) : (
